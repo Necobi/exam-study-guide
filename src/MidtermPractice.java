@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +8,10 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
+
+        System.out.println(findAverage(new float[] {1.5f, 3.5f, 2.0f, 3.0f}));
+        //System.out.println(allDivisibleBy3(new ArrayList[3, 4, 6, 9]));
+        //allDivisibleBy3(n[3, 6, 9]));
     }
 
     /**
@@ -16,6 +21,16 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
+       /* int longestWord =0;
+        int lengthCount =0;
+        for(String word: list){
+            lengthCount=word.length();
+            if(lengthCount>){
+                longestWord
+                Str
+            }
+
+        }*/
         return "";
     }
 
@@ -26,7 +41,15 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
-        return -1;
+        //Map<String,Integer> mapOfStrings = new HashMap<>();
+        int longerThan5 = 0;
+        for(Map.Entry<String, Integer> entry: map.entrySet()){
+            if(entry.getValue()>5){
+                longerThan5++;
+            }
+        }
+
+        return longerThan5;
     }
 
     /**
@@ -36,7 +59,13 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        return -1.0;
+        double sum = 0;
+        int numsCount = 0;
+        for(float num:arr){
+            numsCount++;
+            sum+=num;
+        }
+        return sum/numsCount;
     }
 
     /**
@@ -57,6 +86,12 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
+        for(int nums: arr){
+            if(nums%3==0){
+                return true;
+            }
+             return false;
+        }
         return false;
     }
 
@@ -68,6 +103,11 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
+        for(String word:list){
+            if(word.charAt(0)==('a')){
+                return true;
+            }
+        }
         return false;
     }
 
