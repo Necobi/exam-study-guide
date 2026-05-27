@@ -10,8 +10,21 @@ public class MidtermPractice {
         // check if it works. Fix any issues you find.
 
         System.out.println(findAverage(new float[] {1.5f, 3.5f, 2.0f, 3.0f}));
-        //System.out.println(allDivisibleBy3(new ArrayList[3, 4, 6, 9]));
-        //allDivisibleBy3(n[3, 6, 9]));
+
+        Map<String, Integer> mapOfStrings = new HashMap<>();
+        mapOfStrings.put("why", 3);
+        mapOfStrings.put("hello", 5);
+        mapOfStrings.put("brilliant", 9);
+        mapOfStrings.put("world", 5);
+        mapOfStrings.put("amazing", 7);
+        System.out.println(countLongWords(mapOfStrings));
+
+        Map<String, Integer> mapOfNums = new HashMap<>();
+        mapOfNums.put("a", 7);
+        mapOfNums.put("x", 4);
+        mapOfNums.put("z", 5);
+        mapOfNums.put("t", 9);
+        System.out.println(countOddNumbers(mapOfNums));
     }
 
     /**
@@ -75,7 +88,13 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int oddNums =0;
+        for(Map.Entry<String, Integer> entry: map.entrySet()){
+            if(entry.getValue()%2!=0){
+                oddNums++;
+            }
+        }
+        return oddNums;
     }
 
     /**
